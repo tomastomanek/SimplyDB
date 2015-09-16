@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace SimplyDB
 {
+    /// <summary>
+    /// Class represent data entity Person
+    /// </summary>
     public class Person
     {
         public int IdPerson { get; set; }
@@ -14,6 +17,13 @@ namespace SimplyDB
         public string City { get; set; }
         public int Age { get; set; }
 
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="firstName">first name</param>
+        /// <param name="lastName">last name</param>
+        /// <param name="city">city</param>
+        /// <param name="age">age</param>
         public Person(string firstName, string lastName, string city, int age)
         {
             this.FirstName = firstName;
@@ -24,7 +34,7 @@ namespace SimplyDB
 
         public override string ToString()
         {
-            return FirstName + LastName;
+            return FirstName + " " + LastName;
         }
     }
 }

@@ -9,10 +9,18 @@ using System.Data.SqlClient;
 
 namespace SimplyDB
 {
+    /// <summary>
+    /// Class to control table person
+    /// </summary>
     public class PersonTable
     {
         public static string SQL_INSERT = "INSERT INTO Person VALUES (@firstName, @lastName, @city, @age)";
 
+        /// <summary>
+        /// Insert person to database
+        /// </summary>
+        /// <param name="person">Person to insert</param>
+        /// <returns>count of inserted rows</returns>
         public int Insert(Person person)
         {
             Database db = new Database();
@@ -24,6 +32,11 @@ namespace SimplyDB
             return ret;
         }
 
+        /// <summary>
+        /// Prepare sql command
+        /// </summary>
+        /// <param name="command">sql command</param>
+        /// <param name="person">person</param>
         public void PrepareCommand (SqlCommand command, Person person)
         {
             command.Parameters.Add(new SqlParameter("@idPerson", SqlDbType.Int));
